@@ -1,0 +1,87 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FaceForgeAI – API Key</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, Segoe UI, sans-serif; }
+    body { margin: 0; background: #10141c; color: #f2f5fa; }
+    main { max-width: 720px; margin: 8vh auto; padding: 28px; }
+    .panel { background: #1a2230; border: 1px solid #344155; border-radius: 16px; padding: 24px; }
+    h1 { margin-top: 0; }
+    p { line-height: 1.55; color: #c4cede; }
+    button { border: 0; border-radius: 9px; padding: 12px 18px; background: #6ba5ff; color: #07111f; font-weight: 700; cursor: pointer; }
+    button:disabled { opacity: .55; cursor: wait; }
+    textarea { box-sizing: border-box; width: 100%; min-height: 86px; margin-top: 14px; padding: 12px; border-radius: 8px; background: #0d121a; color: #f2f5fa; border: 1px solid #44536a; }
+    .note { font-size: .92rem; }
+    #status { margin-top: 14px; white-space: pre-wrap; }
+    a { color: #8db9ff; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="panel">
+      <h1>FaceForgeAI API Key</h1>
+      <p>Create a personal API key to use in FaceForgeApp.</p>
+      <p class="note"><strong>Important:</strong> Your key will only be displayed once. Copy it and store it securely. Do not share it with others or post it publicly.</p>
+      <button id="createKey">Generate API Key</button>
+      <textarea id="apiKey" readonly placeholder="Your new API key will appear here..." aria-label="Your API key"></textarea>
+      <button id="copyKey" disabled>Copy</button>
+      <p id="status" role="status"></p>
+      <p class="note">Your images are processed on the FaceForgeAI server. Only upload images you are authorized to submit. Please review the project's privacy information.</p>
+      <p><a href="https://github.com/leomine460-cell/FaceForgeAI">FaceForgeAI on GitHub</a></p>
+    </div>
+  </main>
+  <script>
+    // Public API endpoint. Update this if your Tailscale Funnel address changes.
+    const API_BASE = "https://desktop-ns3g32g.tail548f58.ts.net";
+    const createButton = document.getElementById("createKey");
+    const copyButton = document.getElementById("copyKey");
+    const keyBox = document.getElementById("apiKey");
+    const statusBox = document.getElementById("status");
+
+    createButton.addEventListener("click", async () => {
+      createButton.disabled = true;
+      statusBox.textContent = "Generating API key...";
+      keyBox.value = "";
+      copyButton.disabled = true;
+
+      try {
+        const response = await fetch(`${API_BASE}/api/keys`, { method: "POST" });
+        const body = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(body.detail || `HTTP ${response.status}`);
+        }
+
+        keyBox.value = body.api_key;
+        copyButton.disabled = false;
+        statusBox.textContent = body.message || "API key created. Copy it now.";
+      } catch (error) {
+        statusBox.textContent =
+          `Could not create API key: ${error.message}\n` +
+          "Check that the server is running and that the website is allowed by the server's CORS settings.";
+      } finally {
+        createButton.disabled = false;
+      }
+    });
+
+    copyButton.addEventListener("click", async () => {
+      if (!keyBox.value) return;
+
+      try {
+        await navigator.clipboard.writeText(keyBox.value);
+        statusBox.textContent = "API key copied. Paste it into FaceForgeApp.";
+      } catch {
+        keyBox.focus();
+        keyBox.select();
+        statusBox.textContent =
+          "Automatic copying failed. Select the key and copy it manually.";
+      }
+    });
+  </script>
+</body>
+</html>
+```
