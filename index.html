@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#061326">
+<meta name="description" content="FaceForgeAI — AI-powered facial landmark analysis.">
+<title>FaceForgeAI — AI-Powered Face Analysis</title>
+<style>
+:root{color-scheme:dark;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--bg:#061326;--panel:#0a1b31;--line:#173d66;--text:#f3f7ff;--muted:#b4c6df;--blue:#1597ff;--cyan:#28c4ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 10%,#0a2a50 0,transparent 34%),var(--bg);color:var(--text)}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}header{position:sticky;top:0;z-index:5;background:#040f1ee8;backdrop-filter:blur(14px);border-bottom:1px solid #17446b}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-size:1.5rem;font-weight:800;letter-spacing:-.04em}.mark{display:grid;place-items:center;width:38px;height:38px;border:2px solid var(--blue);border-radius:11px;color:var(--cyan);font-size:1.3rem}.blue{color:var(--blue)}nav{display:flex;align-items:center;gap:clamp(12px,2.4vw,30px);font-size:.94rem;color:#d4e5fa}nav a:hover,footer a:hover{color:var(--cyan)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border:1px solid transparent;border-radius:11px;font:inherit;font-weight:750;cursor:pointer}.primary{background:linear-gradient(135deg,#168cff,#1479e8);color:white}.outline{border-color:#2479c5;background:#07172a;color:white}.hero{padding:70px 0 62px;border-bottom:1px solid #153e64}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:44px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;font-size:.82rem;font-weight:800}h1{font-size:clamp(3rem,6vw,5.3rem);line-height:.98;letter-spacing:-.065em;margin:18px 0 14px}.gradient{background:linear-gradient(90deg,#fff,#6dc9ff 70%,#168bff);color:transparent;background-clip:text}.hero h2{font-size:clamp(1.55rem,3vw,2.35rem);letter-spacing:-.04em;margin:0 0 20px}.hero p,.feature p,.step p,.api p{color:var(--muted);line-height:1.7}.hero p{max-width:570px;font-size:1.06rem}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}.art{position:relative;min-height:360px;display:grid;place-items:center}.scan{width:min(100%,470px);height:350px;position:relative;overflow:hidden;border:1px solid #14548b;border-radius:25px;background:radial-gradient(circle at 50% 35%,#123c65,#07172a 67%);box-shadow:0 0 80px #078aff18}.scan:before,.scan:after{content:"";position:absolute;width:65px;height:65px;border-color:var(--cyan);border-style:solid;filter:drop-shadow(0 0 7px #12bfff)}.scan:before{top:20px;left:20px;border-width:3px 0 0 3px}.scan:after{right:20px;bottom:20px;border-width:0 3px 3px 0}.scan svg{width:100%;height:100%}.scan-label{position:absolute;left:20px;bottom:18px;background:#041326e8;border:1px solid #236da5;border-radius:8px;padding:8px 10px;font-size:.72rem;color:#bde9ff;letter-spacing:.07em}.pills{position:absolute;right:-8px;top:25px;width:170px;padding:12px;border:1px solid #1b6198;border-radius:14px;background:#061a30f5;box-shadow:0 15px 45px #0005}.pills div{padding:10px 2px;border-bottom:1px solid #143450;font-size:.8rem;display:flex;justify-content:space-between;gap:7px}.pills div:last-child{border:0}.check{color:var(--cyan)}section{padding:64px 0}.heading{text-align:center;margin:0 auto 30px}.heading h2{font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-.05em;margin:0 0 10px}.heading p{color:var(--muted);margin:0}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.feature,.step{padding:23px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#0a1c32,#07172a)}.ico{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:#0d3155;color:var(--cyan);font-size:1.45rem;margin-bottom:17px}.feature h3,.step h3{margin:0 0 8px}.feature p,.step p{font-size:.93rem;margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.num{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#0c4d83;color:#bdeaff;font-weight:800;margin-bottom:14px}.api{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:26px;padding:29px;border:1px solid #1c5486;border-radius:20px;background:linear-gradient(110deg,#0a2543,#07182c)}.api h2{margin:8px 0;letter-spacing:-.035em}.trust{border-left:1px solid #1d568a;padding-left:26px;font-size:.92rem;line-height:1.9;color:#d7e9ff}.trust span{color:var(--cyan);margin-right:8px}.status{min-height:1.4em;color:#9de6ff!important;white-space:pre-wrap;overflow-wrap:anywhere}footer{border-top:1px solid #163c61;padding:25px 0;color:#9eb6d2;font-size:.86rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.footlinks{display:flex;gap:20px}.modalbg{display:none;position:fixed;inset:0;z-index:20;place-items:center;padding:18px;background:#020812df}.modalbg.open{display:grid}.modal{width:min(100%,550px);padding:25px;border:1px solid #2468a2;border-radius:18px;background:#081a2e;box-shadow:0 24px 90px #0009}.modalhead{display:flex;justify-content:space-between;gap:20px}.modal h2{margin:0 0 8px}.modal p{color:var(--muted);line-height:1.55}.close{background:#0d2742;border:1px solid #2a5275;border-radius:9px;color:white;padding:6px 10px;cursor:pointer}textarea{width:100%;min-height:82px;margin-top:12px;padding:12px;border:1px solid #345675;border-radius:10px;background:#041120;color:white;font: .9rem ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.small{font-size:.84rem}.btn:disabled{opacity:.55;cursor:wait}
+@media(max-width:900px){nav a:not(.primary){display:none}.hero-grid{grid-template-columns:1fr}.art{max-width:560px;width:100%;margin:auto}.features{grid-template-columns:repeat(2,1fr)}.api{grid-template-columns:1fr}.trust{border-left:0;border-top:1px solid #1d568a;padding:16px 0 0}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}.brand{font-size:1.2rem}.nav{min-height:66px}.nav .btn{padding:10px 12px;font-size:.85rem}.hero{padding:46px 0 38px}.art{min-height:300px}.scan{height:290px}.pills{width:142px;right:-3px;top:10px;padding:8px}.pills div{font-size:.7rem;padding:8px 0}.features,.steps{grid-template-columns:1fr}section{padding:46px 0}.actions .btn{width:100%}.api{padding:21px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#home"><span class="mark" aria-hidden="true">⌘</span><span>FaceForge<span class="blue">AI</span></span></a>
+  <nav aria-label="Main navigation"><a href="#home">Home</a><a href="#features">Features</a><a href="#how">How It Works</a><a href="#api-key">API Key</a><a href="#download">Download</a><a class="btn primary" href="#api-key">Get Started</a></nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+  <div><div class="eyebrow">AI-powered face analysis</div><h1>FaceForge<span class="gradient">AI</span></h1><h2>Turn Your Photos into <span class="gradient">Insights</span></h2>
+    <p>FaceForgeAI analyzes facial images using computer vision and facial landmarks. Explore measured features and annotated results with a workflow designed to be clear, fast, and easy to use.</p>
+    <div class="actions"><a class="btn primary" href="#api-key">Get Your API Key →</a><a class="btn outline" href="#features">Explore Features</a></div>
+  </div>
+  <div class="art" aria-label="Illustration of facial landmark analysis"><div class="scan">
+    <svg viewBox="0 0 420 360" role="img" aria-label="Stylized facial outline with landmark points">
+      <defs><radialGradient id="glow"><stop stop-color="#28618d" stop-opacity=".75"/><stop offset="1" stop-color="#07172a" stop-opacity=".1"/></radialGradient><linearGradient id="line"><stop stop-color="#63d9ff"/><stop offset="1" stop-color="#168bff"/></linearGradient></defs>
+      <ellipse cx="210" cy="180" rx="130" ry="150" fill="url(#glow)"/>
+      <path d="M119 100Q130 36 210 32Q291 37 301 100L290 207Q276 279 210 311Q144 279 130 207Z" fill="#123655" fill-opacity=".34" stroke="url(#line)" stroke-width="2.5"/>
+      <path d="M139 144Q166 120 192 145M228 145Q254 120 281 144" fill="none" stroke="#55ceff" stroke-width="3"/>
+      <ellipse cx="166" cy="151" rx="17" ry="9" fill="none" stroke="#73ddff" stroke-width="2"/><ellipse cx="254" cy="151" rx="17" ry="9" fill="none" stroke="#73ddff" stroke-width="2"/>
+      <path d="M209 151L192 204L211 211L227 203M170 245Q210 270 250 245Q211 286 170 245Z" fill="none" stroke="#4fcaff" stroke-width="2.5"/>
+      <g stroke="#168bff" stroke-opacity=".8" stroke-width="1.1" fill="none"><path d="M119 100L165 151L139 207L170 245L210 311L250 245L281 207L254 151L301 100"/><path d="M130 207L192 204L210 211L227 203L290 207"/><path d="M142 119L210 75L278 119M165 151L210 75L254 151M139 207L192 204L170 245M227 203L281 207L250 245"/><path d="M210 75V151V211V311"/></g>
+      <g fill="#77e5ff" stroke="#0a70bf" stroke-width="1"><circle cx="119" cy="100" r="4"/><circle cx="142" cy="119" r="4"/><circle cx="165" cy="151" r="4"/><circle cx="192" cy="204" r="4"/><circle cx="139" cy="207" r="4"/><circle cx="170" cy="245" r="4"/><circle cx="210" cy="75" r="4"/><circle cx="210" cy="151" r="4"/><circle cx="210" cy="211" r="4"/><circle cx="210" cy="311" r="4"/><circle cx="278" cy="119" r="4"/><circle cx="254" cy="151" r="4"/><circle cx="227" cy="203" r="4"/><circle cx="281" cy="207" r="4"/><circle cx="250" cy="245" r="4"/><circle cx="301" cy="100" r="4"/></g>
+    </svg><div class="scan-label">FACIAL LANDMARKS · ILLUSTRATION</div>
+  </div><div class="pills" aria-hidden="true"><div><span>◎ Face Detection</span><b class="check">✓</b></div><div><span>⌘ Landmarks</span><b class="check">✓</b></div><div><span>↔ Measurements</span><b class="check">✓</b></div><div><span>▤ Annotated Images</span><b class="check">✓</b></div></div></div>
+</div></section>
+<section id="features"><div class="wrap"><div class="heading"><h2>Powerful <span class="gradient">Features</span></h2><p>Tools for practical facial landmark analysis and image-based measurements.</p></div>
+  <div class="features">
+    <article class="feature"><div class="ico">◎</div><h3>Face Detection</h3><p>Detect a face in an image before running the analysis workflow.</p></article>
+    <article class="feature"><div class="ico">⌘</div><h3>Facial Landmarks</h3><p>Locate facial landmark points to support consistent measurements.</p></article>
+    <article class="feature"><div class="ico">↔</div><h3>Measurements</h3><p>Inspect geometric distances derived from detected facial points.</p></article>
+    <article class="feature"><div class="ico">▧</div><h3>Annotated Images</h3><p>Review images marked with analysis points and visual measurements.</p></article>
+  </div>
+</div></section>
+<section id="how"><div class="wrap"><div class="heading"><h2>How It <span class="gradient">Works</span></h2><p>A simple workflow from image selection to analysis results.</p></div>
+  <div class="steps">
+    <article class="step"><span class="num">01</span><h3>Choose Your Images</h3><p>Follow the FaceForgeApp instructions and select the required front and side profile images.</p></article>
+    <article class="step"><span class="num">02</span><h3>Run the Analysis</h3><p>The desktop client sends the images to the FaceForgeAI API for processing.</p></article>
+    <article class="step"><span class="num">03</span><h3>Review the Results</h3><p>View the returned measurements, annotated images, and available guidance in the app.</p></article>
+  </div>
+</div></section>
+<section id="api-key"><div class="wrap"><div class="api">
+  <div><div class="eyebrow">Get started</div><h2>Your FaceForgeAI API Key</h2><p>Create a personal API key for use in the FaceForgeApp desktop client.</p><p class="small">Your key is shown only once. Store it securely and never share it publicly.</p><p class="status" id="inlineStatus" role="status"></p></div>
+  <button class="btn primary" id="openKeyModal">Create API Key →</button>
+  <div class="trust"><div><span>◆</span> API-key authentication</div><div><span>◆</span> Server-side image processing</div><div><span>◆</span> Simple desktop workflow</div></div>
+</div></div></section>
+<section id="download"><div class="wrap"><div class="heading"><h2>Use FaceForgeAI on <span class="gradient">Desktop</span></h2><p>Visit the official project repository for the desktop client and updates.</p><div class="actions" style="justify-content:center"><a class="btn primary" href="https://github.com/leomine460-cell/FaceForgeAI" target="_blank" rel="noopener noreferrer">View Project on GitHub ↗</a></div></div></div></section>
+</main>
+<footer><div class="wrap foot"><a class="brand" href="#home" style="font-size:1rem"><span class="mark" style="width:30px;height:30px">⌘</span><span>FaceForge<span class="blue">AI</span></span></a><div class="footlinks"><a href="#features">Features</a><a href="#how">How It Works</a><a href="https://github.com/leomine460-cell/FaceForgeAI" target="_blank" rel="noopener noreferrer">GitHub</a></div><span>© <span id="year"></span> FaceForgeAI</span></div></footer>
+<div class="modalbg" id="keyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal">
+  <div class="modalhead"><div><h2 id="modalTitle">Create an API Key</h2><p class="small">Your key is displayed once. Copy it and save it securely.</p></div><button class="close" id="closeModal" aria-label="Close dialog">✕</button></div>
+  <button class="btn primary" id="createKey">Generate API Key</button><textarea id="apiKey" readonly placeholder="Your new API key will appear here..." aria-label="Your API key"></textarea><button class="btn outline" id="copyKey" disabled>Copy API Key</button><p class="status" id="keyStatus" role="status" aria-live="polite"></p><p class="small">Only upload images you are authorized to submit. Please review the project's privacy information.</p>
+</div></div>
+<script>
+const API_BASE = "https://desktop-ns3g32g.tail548f58.ts.net";
+const modal = document.getElementById("keyModal");
+const openButton = document.getElementById("openKeyModal");
+const closeButton = document.getElementById("closeModal");
+const createButton = document.getElementById("createKey");
+const copyButton = document.getElementById("copyKey");
+const keyBox = document.getElementById("apiKey");
+const statusBox = document.getElementById("keyStatus");
+const inlineStatus = document.getElementById("inlineStatus");
+document.getElementById("year").textContent = new Date().getFullYear();
+function openModal(){modal.classList.add("open");document.body.style.overflow="hidden";closeButton.focus()}
+function closeModal(){modal.classList.remove("open");document.body.style.overflow="";openButton.focus()}
+openButton.addEventListener("click",openModal);
+closeButton.addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))closeModal()});
+createButton.addEventListener("click",async()=>{
+  createButton.disabled=true;statusBox.textContent="Generating API key...";inlineStatus.textContent="";keyBox.value="";copyButton.disabled=true;
+  try{
+    const response=await fetch(`${API_BASE}/api/keys`,{method:"POST"});
+    const body=await response.json().catch(()=>({}));
+    if(!response.ok)throw new Error(body.detail||`HTTP ${response.status}`);
+    if(!body.api_key)throw new Error("The server response did not include an API key.");
+    keyBox.value=body.api_key;copyButton.disabled=false;statusBox.textContent=body.message||"API key created. Copy it now.";
+  }catch(error){statusBox.textContent=`Could not create API key: ${error.message}\nCheck that the API server is running and that CORS allows this website.`}
+  finally{createButton.disabled=false}
+});
+copyButton.addEventListener("click",async()=>{
+  if(!keyBox.value)return;
+  try{await navigator.clipboard.writeText(keyBox.value);statusBox.textContent="API key copied. Paste it into FaceForgeApp.";inlineStatus.textContent="API key copied to clipboard."}
+  catch{keyBox.focus();keyBox.select();statusBox.textContent="Automatic copying failed. Select the key and copy it manually."}
+});
+</script>
+</body>
+</html>
